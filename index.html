@@ -113,11 +113,63 @@
       </section>
       <div class="card shadow-lg p-4 mb-5">
         <h1 class="mb-4 text-primary" id="picker-section">🎉 Demo 🎉</h1>
-        <button id="pick-winner-btn" class="btn btn-danger btn-lg">
+        <button
+          id="pick-winner-btn"
+          onclick="pickWinner"
+          class="btn btn-danger btn-lg"
+        >
           Pick a Winner
         </button>
         <div id="winner-display" class="mt-4 p-3 fs-4 fw-bold text-dark"></div>
-        <div id="winner-emoji"></div>
+    
+        <!DOCTYPE html>
+        <head>
+          
+          </style>
+        </head>
+        
+      
+          <!-- Winner Modal -->
+          <div
+            class="modal fade"
+            id="winnerModal"
+            tabindex="-1"
+            aria-labelledby="winnerModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                  <h5 class="modal-title" id="winnerModalLabel">
+                    🎉 Winner Announced! 🎉
+                  </h5>
+                  <div id="winner-emoji"></div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body" id="winnerModalBody">
+                  <!-- Winner message will go here -->
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Winner Modal -->
+
+          <script src="picker.js"></script>
+        </body>
 
         <div class="mt-4 mb-4">
           <div class="card p-3">
@@ -150,7 +202,11 @@
                       >Add to start</label
                     >
                   </div>
-                  <button id="submit-comment" class="btn btn-primary" onclick="addComment()">
+                  <button
+                    id="submit-comment"
+                    class="btn btn-primary"
+                    onclick="addComment()"
+                  >
                     Add
                   </button>
                 </div>
